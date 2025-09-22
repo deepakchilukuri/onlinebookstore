@@ -6,7 +6,7 @@
 
   <groupId>onlinebookstore</groupId>
   <artifactId>onlinebookstore</artifactId>
-  <version>0.0.1-SNAPSHOT</version> <!-- Use 1.0.0 for release builds -->
+  <version>1.0.0</version> <!-- Use 1.0.0 for release builds -->
   <packaging>war</packaging>
 
   <name>Online Bookstore</name>
@@ -109,3 +109,4 @@
   </profiles>
 
 </project>
+
