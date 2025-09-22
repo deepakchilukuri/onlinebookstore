@@ -23,29 +23,35 @@
 
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
-        <version>3.2.1</version>
+        <version>3.3.2</version>
         <configuration>
           <warSourceDirectory>WebContent</warSourceDirectory>
+        </configuration>
+      </plugin>
+
+      <!-- Deploy plugin (optional if you want explicit configuration) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <skip>false</skip>
         </configuration>
       </plugin>
     </plugins>
   </build>
 
   <dependencies>
-    <!-- Database drivers (keep only the one you need in production) -->
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <version>42.3.7</version>
     </dependency>
-
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.28</version>
     </dependency>
-
-    <!-- Servlet API provided by Tomcat 9 at runtime -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -54,18 +60,16 @@
     </dependency>
   </dependencies>
 
-  <!-- Added distribution management for Nexus -->
   <distributionManagement>
     <repository>
-      <id>nexus-releases</id>
-      <name>Nexus Releases</name>
-      <url>https://nexus.example.com/repository/maven-releases/</url>
+      <id>maven-releases</id>
+      <name>Maven Releases</name>
+      <url>http://13.51.242.155:8081/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <name>Nexus Snapshots</name>
-      <url>https://nexus.example.com/repository/maven-snapshots/</url>
+      <id>maven-snapshots</id>
+      <name>Maven Snapshots</name>
+      <url>http://13.51.242.155:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
-
 </project>
