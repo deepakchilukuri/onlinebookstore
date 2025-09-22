@@ -53,4 +53,19 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
+
+  <!-- Added distribution management for Nexus -->
+  <distributionManagement>
+    <repository>
+      <id>nexus-releases</id>
+      <name>Nexus Releases</name>
+      <url>https://nexus.example.com/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <name>Nexus Snapshots</name>
+      <url>https://nexus.example.com/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
 </project>
